@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SBS_Decoder;
+using System;
 using System.IO;
 using System.Net.Sockets;
 using System.Threading.Tasks;
@@ -23,7 +24,8 @@ namespace Runner
 
         private static void processMessage(string message)
         {
-            Console.WriteLine(message);
+            var msg = Message.GetMessage(message);
+            Console.WriteLine(msg.FlightID);
         }
     }
 }
